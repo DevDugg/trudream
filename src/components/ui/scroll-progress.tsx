@@ -23,7 +23,7 @@ const ScrollProgress = ({ children }: IProps) => {
           top: 0,
           left: 0,
           right: 0,
-          background: colors["PRIMARY"],
+          background: colors["ACCENT"],
           transformOrigin: "0%",
           zIndex: 100,
           height: 3,

@@ -4,6 +4,6 @@ export type InteractionType = {
 };
 
 export const interactions: InteractionType = {
-  useEntryAnimation: true,
+  useEntryAnimation: false,
   useProgressBar: true,
 };
