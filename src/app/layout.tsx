@@ -9,9 +9,9 @@ import localFont from "next/font/local";
 
 const font = localFont({
   src: [
-    { path: "../../../public/fonts/OverusedGrotesk-Bold.otf", weight: "700" },
-    { path: "../../../public/fonts/OverusedGrotesk-Medium.otf", weight: "500" },
-    { path: "../../../public/fonts/OverusedGrotesk-VF.otf", weight: "400" },
+    { path: "../../public/fonts/OverusedGrotesk-Bold.otf", weight: "700" },
+    { path: "../../public/fonts/OverusedGrotesk-Medium.otf", weight: "500" },
+    { path: "../../public/fonts/OverusedGrotesk-VF.ttf", weight: "400" },
   ],
   display: "block",
 });

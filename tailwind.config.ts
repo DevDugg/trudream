@@ -31,6 +31,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       colors: colors,
+      backgroundImage: {
+        HERO_PATTERN: "url('/images/hero-pattern.png')",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
