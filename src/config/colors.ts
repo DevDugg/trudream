@@ -1,5 +1,5 @@
 export const colors: Record<string, `#${string}` | `rgb(${string})` | `rgba(${string})`> = {
-  PRIMARY: "rgba(13, 32, 96, 1)",
+  PRIMARY: "rgba(13,32,96,1)",
   SECONDARY: "rgba(253, 248, 251, 1)",
   BACKGROUND: "rgba(255, 253, 252, 1)",
   PINK: "rgba(255, 200, 221, 1)",
