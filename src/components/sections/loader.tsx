@@ -11,7 +11,7 @@ const Loader = ({ children }: PropsWithChildren) => {
   return (
     <>
       <motion.div
-        className="loader fixed top-0 left-0 z-50 w-full h-full flex items-center gap-6 justify-center pointer-events-none bg-LOADER"
+        className="loader fixed top-0 left-0 z-50 w-full h-full flex items-center gap-6 justify-center pointer-events-none bg-WHITE"
         initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: 0, y: "5%" }}
         transition={{
