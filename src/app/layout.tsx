@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import Header from "@/components/sections/header/header";
 import Loader from "@/components/sections/loader";
 import Provider from "@/config/provider";
 import { Viewport } from "next";
@@ -10,6 +11,7 @@ import localFont from "next/font/local";
 const font = localFont({
   src: [
     { path: "../../public/fonts/OverusedGrotesk-Bold.otf", weight: "700" },
+    { path: "../../public/fonts/OverusedGrotesk-SemiBold.otf", weight: "600" },
     { path: "../../public/fonts/OverusedGrotesk-Medium.otf", weight: "500" },
     { path: "../../public/fonts/OverusedGrotesk-VF.ttf", weight: "400" },
   ],
@@ -35,6 +37,7 @@ export default function RootLayout({
       <body className={`${font.className} bg-BACKGROUND text-PRIMARY`}>
         <Provider>
           <Loader />
+          <Header />
           {children}
         </Provider>
       </body>
