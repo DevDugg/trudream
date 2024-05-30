@@ -12,8 +12,8 @@ type GeneralType = {
 };
 
 export const general: GeneralType = {
-  appName: "Next Landing Template",
-  appDescription: "Next Landing Template",
+  appName: "Trudream",
+  appDescription: "Fund Your Dreams, Achieve Financial Freedom",
   domainName: "avium.trade",
   colors: {
     theme: "light",
