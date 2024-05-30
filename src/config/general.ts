@@ -12,7 +12,7 @@ type GeneralType = {
 };
 
 export const general: GeneralType = {
-  appName: "Trudream",
+  appName: "TruDream",
   appDescription: "Fund Your Dreams, Achieve Financial Freedom",
   domainName: "avium.trade",
   colors: {
