@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import Footer from "@/components/sections/footer/footer";
 import Header from "@/components/sections/header/header";
 import Loader from "@/components/sections/loader";
 import Provider from "@/config/provider";
@@ -34,11 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className} bg-BACKGROUND text-PRIMARY`}>
+      <body className={`${font.className} bg-BACKGROUND text-PRIMARY leading-none`}>
         <Provider>
           <Loader />
           <Header />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>
