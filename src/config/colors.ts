@@ -3,6 +3,7 @@ export const colors: Record<string, `#${string}` | `rgb(${string})` | `rgba(${st
   SECONDARY: "rgba(253, 248, 251, 1)",
   BACKGROUND: "rgba(255, 253, 252, 1)",
   PINK: "rgba(255, 200, 221, 1)",
+  PINK_HOVER: "rgba(255, 200, 221, 1)",
   BLACK: "rgba(23, 23, 23, 1)",
   OPAQUE_BLACK: "rgba(23, 23, 23, 0.6)",
   GRAY: "rgba(204, 204, 204, 1)",

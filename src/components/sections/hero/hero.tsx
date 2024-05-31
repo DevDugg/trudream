@@ -1,4 +1,5 @@
 import Container from "../../layout/container";
+import HeroForm from "./hero-form";
 import { general } from "@/config/general";
 
 const Hero = () => {
@@ -12,6 +13,7 @@ const Hero = () => {
             education to help you launch, scale, or invest in your business goals.
           </p>
         </div>
+        <HeroForm />
       </Container>
     </section>
   );

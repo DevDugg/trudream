@@ -4,6 +4,7 @@ import Footer from "@/components/sections/footer/footer";
 import Header from "@/components/sections/header/header";
 import Loader from "@/components/sections/loader";
 import Provider from "@/config/provider";
+import { Toaster } from "@/components/ui/toaster";
 import { Viewport } from "next";
 import { colors } from "@/config/colors";
 import { getSEOTags } from "@/lib/seo";
@@ -40,6 +41,7 @@ export default function RootLayout({
           <Loader />
           <Header />
           {children}
+          <Toaster />
           <Footer />
         </Provider>
       </body>
