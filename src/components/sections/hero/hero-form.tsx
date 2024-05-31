@@ -5,7 +5,9 @@ import { ZodType, z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import LoaderLogo from "@/components/animations/loader-logo";
 import { PhoneInput } from "./phone-input";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
@@ -36,9 +38,13 @@ const HeroForm = () => {
 
   const onSubmit = async (data: FormData) => {
     if (isLoading) return;
-    console.log(data);
-    alert("Form submitted successfully");
-    // setIsLoading(true);
+    setIsLoading(true);
+    // Mock form submission
+    setTimeout(() => {
+      setIsLoading(false);
+      toast({ title: "Success", description: "Form has been submitted successfully." });
+    }, 2000);
+
     // const response = await fetch("/api/save-form", {
     //   method: "POST",
     //   body: JSON.stringify(data),
@@ -62,8 +68,16 @@ const HeroForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-6 bg-WHITE rounded-2xl border border-GRAY p-4 max-w-[480px]"
+        className="flex flex-col gap-6 bg-WHITE rounded-2xl border border-GRAY p-4 max-w-[480px] relative"
       >
+        <motion.div
+          className="absolute top-0 left-0 size-full bg-WHITE rounded-2xl flex items-center justify-center z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isLoading ? 0.6 : 0 }}
+          style={{ pointerEvents: isLoading ? "all" : "none" }}
+        >
+          <LoaderLogo />
+        </motion.div>
         <FormField
           control={form.control}
           name="first_name"
