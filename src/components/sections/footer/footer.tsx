@@ -49,7 +49,7 @@ export const socialLinks: LinkExternalProps[] = [
 const Footer = () => {
   return (
     <footer className="footer">
-      <Container className="flex flex-col gap-10">
+      <Container className="flex flex-col gap-10 pb-10">
         <div className="flex flex-col gap-6">
           <h3 className="text-BLACK font-medium text-center">Sitemap</h3>
           <div className="flex flex-wrap gap-6">
