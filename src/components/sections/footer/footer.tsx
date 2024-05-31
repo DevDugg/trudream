@@ -4,7 +4,7 @@ import Container from "@/components/layout/container";
 import FooterLogo from "./footer-logo";
 import LinkInternal from "../link-internal";
 
-const footerLinks: LinkExternalProps[] = [
+export const footerLinks: LinkExternalProps[] = [
   {
     name: "Home",
     href: "#",
@@ -35,7 +35,7 @@ const footerLinks: LinkExternalProps[] = [
   },
 ];
 
-const socialLinks: LinkExternalProps[] = [
+export const socialLinks: LinkExternalProps[] = [
   {
     name: "Instagram",
     href: "https://www.instagram.com/",

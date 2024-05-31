@@ -17,7 +17,7 @@ export const general: GeneralType = {
   domainName: "avium.trade",
   colors: {
     theme: "light",
-    main: colors.PRIMARY,
+    main: colors.ACCENT,
   },
   creator: "@website_dugg",
 };

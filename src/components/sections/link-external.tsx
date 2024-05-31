@@ -17,11 +17,11 @@ const LinkExternal = ({ href, name }: LinkExternalProps) => {
     <div
       onMouseOver={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="flex items-center gap-2"
+      className="flex items-center gap-0"
     >
       <motion.div
-        initial={{ scale: 0, width: 0 }}
-        animate={isHovered ? { scale: 1, width: 24 } : {}}
+        initial={{ scale: 0, width: 0, paddingRight: 0 }}
+        animate={isHovered ? { scale: 1, width: 24, paddingRight: 8 } : {}}
         className="origin-bottom-left"
       >
         <Image src="/images/social-arrow.svg" alt="external link" width={24} height={24} />

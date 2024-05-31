@@ -20,7 +20,7 @@ const font = localFont({
 });
 
 export const viewport: Viewport = {
-  // Will use the primary color of your theme to show a nice theme color in the URL bar of supported browsers
+  // Will use the ACCENT color of your theme to show a nice theme color in the URL bar of supported browsers
   themeColor: colors.main,
   width: "device-width",
   initialScale: 1,
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className} bg-BACKGROUND text-PRIMARY`}>
+      <body className={`${font.className} bg-BACKGROUND text-ACCENT`}>
         <Provider>
           <Loader />
           <Header />
