@@ -11,7 +11,7 @@ const Guide = () => {
 
         <div className="flex flex-col gap-6">
           {guideData.map((item) => (
-            <div className="flex flex-col gap-4">
+            <div key={item.title} className="flex flex-col gap-4">
               <h4 className="text-ACCENT text-[18px] font-bold leading-none">{item.title}</h4>
               <p className="p">{item.text}</p>
             </div>
