@@ -8,9 +8,9 @@ const AboutUs = () => {
     <section>
       <Container>
         <div className="flex flex-col gap-3 mb-10">
-          <h2 className="text-[24px] leading-none font-bold">
+          <h3 className="text-[24px] leading-none font-bold">
             Turning Dreams into Reality, One Step at a Time
-          </h2>
+          </h3>
 
           <p className="leading-[140%] text-BLACK">
             We understand the frustration of feeling stuck. Traditional loans can be rigid and out
