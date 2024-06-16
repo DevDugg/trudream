@@ -1,6 +1,8 @@
 import AboutUs from '@/components/sections/about-us/about-us';
 import Business from '@/components/sections/business/business';
+import Guide from '@/components/sections/guide/guide';
 import Hero from '@/components/sections/hero/hero';
+import Reviews from '@/components/sections/reviews/reviews';
 
 export default function Home() {
   return (
@@ -8,6 +10,8 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <Business />
+      <Guide />
+      <Reviews />
     </main>
   );
 }
