@@ -8,11 +8,9 @@ const AboutUs = () => {
     <section>
       <Container>
         <div className="flex flex-col gap-3 mb-10">
-          <h3 className="text-[24px] leading-none font-bold">
-            Turning Dreams into Reality, One Step at a Time
-          </h3>
+          <h3 className="h3">Turning Dreams into Reality, One Step at a Time</h3>
 
-          <p className="leading-[140%] text-BLACK">
+          <p className="p">
             We understand the frustration of feeling stuck. Traditional loans can be rigid and out
             of reach, leaving you discouraged. That's why we offer a unique approach that tackles
             your financial challenges from two angles:

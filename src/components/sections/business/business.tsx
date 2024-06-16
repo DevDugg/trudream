@@ -8,9 +8,7 @@ const Business = () => {
     <section>
       <Container>
         <div className="flex flex-col gap-20">
-          <h3 className="leading-none text-[24px] font-bold">
-            Funding Solutions & Financial Education by TruDream
-          </h3>
+          <h3 className="h3">Funding Solutions & Financial Education by TruDream</h3>
 
           <div className="flex flex-col gap-10">
             {businessData.map((item) => (
