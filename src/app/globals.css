@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .h3 {
+    @apply text-[24px] font-bold text-ACCENT leading-none;
+  }
+
+  .p {
+    @apply leading-[140%] text-[16px] text-BLACK;
+  }
+}
