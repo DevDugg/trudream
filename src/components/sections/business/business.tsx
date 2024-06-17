@@ -7,10 +7,10 @@ const Business = () => {
   return (
     <section>
       <Container>
-        <div className="flex flex-col gap-20">
-          <h3 className="h3">Funding Solutions & Financial Education by TruDream</h3>
+        <div className="flex flex-col gap-10">
+          <h3 className="h3 sm:text-center">Funding Solutions & Financial Education by TruDream</h3>
 
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 sm:gap-8">
             {businessData.map((item, i) => (
               <div key={i}>
                 <h2 className="text-[32px] font-bold leading-none text-BLACK mb-6">{item.title}</h2>
