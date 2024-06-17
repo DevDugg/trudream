@@ -7,6 +7,10 @@
     @apply text-[24px] font-bold text-ACCENT leading-none;
   }
 
+  .h4 {
+    @apply text-[18px] font-bold text-ACCENT leading-[140%];
+  }
+
   .p {
     @apply leading-[140%] text-[16px] text-BLACK;
   }
