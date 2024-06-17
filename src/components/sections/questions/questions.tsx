@@ -20,9 +20,8 @@ const Questions = () => {
         <div className="flex flex-col gap-6">
           {questionsData.map((item, i) => (
             <motion.div
-              initial={{ height: 0, borderColor: colors.GRAY }}
-              animate={{ height: "100%", borderColor: i === activeFAQ ? `${colors.GRAY}00` : colors.GRAY }}
-              exit={{ height: 0 }}
+              initial={{ borderColor: colors.GRAY }}
+              animate={{ borderColor: i === activeFAQ ? `${colors.GRAY}00` : colors.GRAY }}
               onClick={() => setActiveFAQ(i)}
               key={item.title}
               className={
@@ -30,36 +29,35 @@ const Questions = () => {
               }
             >
               <div className="flex items-center gap-6 justify-between">
-                <h4
-                  className={clsx({
-                    "text-ACCENT": activeFAQ === i,
-                  })}
-                >
+                <motion.h4 initial={{ color: colors.BLACK }} animate={i === activeFAQ ? { color: colors.ACCENT } : {}}>
                   {item.title}
-                </h4>
-                <Image
-                  src={`/images/${activeFAQ === i ? "minus" : "plus"}.svg`}
-                  alt="plus"
-                  width={24}
-                  height={24}
-                  className="transition-all"
-                />
+                </motion.h4>
+                <div className="relative size-6">
+                  <motion.div
+                    className="top-0 right-0 size-6 absolute"
+                    initial={{ opacity: 1 }}
+                    animate={i === activeFAQ ? { opacity: 0 } : {}}
+                  >
+                    <Image src={`/images/plus.svg`} alt="plus" width={24} height={24} />
+                  </motion.div>
+                  <motion.div
+                    className="top-0 right-0 size-6 absolute"
+                    initial={{ opacity: 0 }}
+                    animate={i === activeFAQ ? { opacity: 1 } : {}}
+                  >
+                    <Image src={`/images/minus.svg`} alt="minus" width={24} height={24} />
+                  </motion.div>
+                </div>
               </div>
 
-              <AnimatePresence>
-                {activeFAQ === i && (
-                  <motion.div
-                    key="content"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <p className="mt-6 text-[16px] transition-all leading-[140%] font-normal">{item.text}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div
+                key="content"
+                initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                animate={i === activeFAQ ? { opacity: 1, height: "fit-content", marginTop: 16 } : {}}
+                className="overflow-hidden"
+              >
+                <p className="text-[16px] leading-[140%] font-normal">{item.text}</p>
+              </motion.div>
             </motion.div>
           ))}
         </div>
