@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <section>
       <Container>
-        <div className="flex flex-col gap-3 mb-10">
+        <div className="flex flex-col gap-4 mb-10">
           <h3 className="h3">Turning Dreams into Reality, One Step at a Time</h3>
 
           <p className="p">
@@ -18,9 +18,9 @@ const AboutUs = () => {
         </div>
         <Button className="w-full text-[18px] font-medium mb-10">Browse our services</Button>
 
-        <div className="flex flex-col gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-6">
           {aboutData.map((item) => (
-            <div key={item.title} className="p-6 bg-LIGHT_GRAY rounded-[16px]">
+            <div key={item.title} className="p-6 sm:py-4 bg-LIGHT_GRAY rounded-[16px]">
               <div className="flex items-center gap-4 mb-3">
                 <Image src={`/images/about/${item.img}.svg`} alt="icon" width={32} height={32} />
                 <h4 className="text-ACCENT leading-none text-[20px] font-semibold">{item.title}</h4>
