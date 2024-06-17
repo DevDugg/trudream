@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
-import Container from "@/components/layout/container";
-import Image from "next/image";
-import { businessData } from "@/data/business.data";
+import { Button } from '@/components/ui/button';
+import Container from '@/components/layout/container';
+import Image from 'next/image';
+import { businessData } from '@/data/business.data';
 
 const Business = () => {
   return (
@@ -14,7 +14,13 @@ const Business = () => {
             {businessData.map((item, i) => (
               <div key={i}>
                 <h2 className="text-[32px] font-bold leading-none text-BLACK mb-6">{item.title}</h2>
-                <Image src={`/images/business/${item.img}.png`} alt="image" width={420} height={200} className="mb-3" />
+                <Image
+                  src={`/images/business/${item.img}.png`}
+                  alt="image"
+                  width={1100}
+                  height={800}
+                  className="mb-3"
+                />
                 <p className="leading-[140%] text-BLACK">{item.text}</p>
               </div>
             ))}
