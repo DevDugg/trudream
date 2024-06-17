@@ -16,6 +16,7 @@ const Hero = () => {
             goals.
           </p>
         </div>
+
         <HeroForm />
 
         <div className="flex flex-col gap-4">
