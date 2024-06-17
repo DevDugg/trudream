@@ -1,18 +1,26 @@
-"use client";
+'use client';
 
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { ZodType, z } from "zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { ZodType, z } from 'zod';
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import LoaderLogo from "@/components/animations/loader-logo";
-import { PhoneInput } from "./phone-input";
-import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast";
-import validator from "validator";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import LoaderLogo from '@/components/animations/loader-logo';
+import { PhoneInput } from './phone-input';
+import { motion } from 'framer-motion';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
+import validator from 'validator';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 export type FormData = {
   first_name: string;
@@ -28,10 +36,12 @@ const HeroForm = () => {
   const { toast } = useToast();
 
   const formSchema: ZodType<FormData> = z.object({
-    email: z.string().email({ message: "Please enter a valid Discord username or email" }),
-    first_name: z.string().min(1, { message: "First name is required" }),
-    last_name: z.string().min(1, { message: "First name is required" }),
-    phone: z.string().refine(validator.isMobilePhone, { message: "Please enter a valid phone number" }),
+    email: z.string().email({ message: 'Please enter a valid Discord username or email' }),
+    first_name: z.string().min(1, { message: 'First name is required' }),
+    last_name: z.string().min(1, { message: 'First name is required' }),
+    phone: z
+      .string()
+      .refine(validator.isMobilePhone, { message: 'Please enter a valid phone number' }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({ resolver: zodResolver(formSchema) });
@@ -42,7 +52,7 @@ const HeroForm = () => {
     // Mock form submission
     setTimeout(() => {
       setIsLoading(false);
-      toast({ title: "Success", description: "Form has been submitted successfully." });
+      toast({ title: 'Success', description: 'Form has been submitted successfully.' });
     }, 2000);
 
     // const response = await fetch("/api/save-form", {
@@ -68,14 +78,12 @@ const HeroForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-6 bg-WHITE rounded-2xl border border-GRAY p-4 max-w-[480px] relative"
-      >
+        className="flex flex-col gap-6 bg-WHITE rounded-2xl border border-GRAY p-4 max-w-[480px] relative sm:mx-auto">
         <motion.div
           className="absolute top-0 left-0 size-full bg-WHITE rounded-2xl flex items-center justify-center z-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: isLoading ? 0.6 : 0 }}
-          style={{ pointerEvents: isLoading ? "all" : "none" }}
-        >
+          style={{ pointerEvents: isLoading ? 'all' : 'none' }}>
           <LoaderLogo />
         </motion.div>
         <FormField
