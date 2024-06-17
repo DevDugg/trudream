@@ -7,32 +7,49 @@ import { heroPayData } from '@/data/hero.data';
 const Hero = () => {
   return (
     <section className="hero bg-HERO_PATTERN">
-      <Container className="flex flex-col gap-10 sm:gap-8">
-        <div className="flex flex-col gap-4 sm:text-center">
-          <h1 className="text-[32px] sm:text-[40px] font-bold leading-none">
+      <Container className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 sm:gap-8">
+        <div className="flex flex-col gap-4 sm:text-center lg:text-left lg:max-w-[690px]">
+          <h1 className="text-[32px] sm:text-[40px] lg:text-[80px] font-bold leading-none lg:mb-10">
             {general.appDescription}
           </h1>
-          <p className="text-BLACK text-base sm:text-[18px]">
+          <p className="text-BLACK text-base sm:text-[18px] lg:text-[20px] lg:max-w-[590px] leading-[140%] lg:mb-20">
             We empowers business owners like you to turn dreams into reality. We provide funding and
             financial literacy education to help you launch, scale, or invest in your business
             goals.
           </p>
+
+          <div className="hidden lg:block">
+            <h4 className="h4 mb-4">Invested in</h4>
+            <div className="flex gap-5">
+              {heroPayData.map((item) => (
+                <Image
+                  key={item.path}
+                  src={`/images/hero/${item.path}.svg`}
+                  alt="icon"
+                  width={40}
+                  height={40}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
-        <HeroForm />
+        <div className="flex-[0_0_40%]">
+          <HeroForm />
 
-        <div className="flex flex-col sm:items-center gap-4 sm:gap-6">
-          <h4 className="h4">Invested in</h4>
-          <div className="flex gap-5">
-            {heroPayData.map((item) => (
-              <Image
-                key={item.path}
-                src={`/images/hero/${item.path}.svg`}
-                alt="icon"
-                width={40}
-                height={40}
-              />
-            ))}
+          <div className="flex flex-col lg:hidden sm:items-center gap-4 sm:gap-6">
+            <h4 className="h4">Invested in</h4>
+            <div className="flex gap-5">
+              {heroPayData.map((item) => (
+                <Image
+                  key={item.path}
+                  src={`/images/hero/${item.path}.svg`}
+                  alt="icon"
+                  width={40}
+                  height={40}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </Container>
