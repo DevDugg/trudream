@@ -8,7 +8,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 const Questions = () => {
-  const [activeFAQ, setActiveFAQ] = useState('');
+  const [activeFAQ, setActiveFAQ] = useState(questionsData[0].title);
 
   const onFAQ = (name: string) => {
     if (name === activeFAQ) {
@@ -60,7 +60,8 @@ const Questions = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}>
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden">
                     <p className="mt-6 text-[16px] transition-all leading-[140%] font-normal">
                       {item.text}
                     </p>
