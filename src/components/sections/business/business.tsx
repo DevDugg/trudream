@@ -44,16 +44,24 @@ const Business = () => {
             Funding Solutions & Financial Education by TruDream
           </h3>
 
-          <div className="flex items-center justify-between">
-            <motion.div className="flex-[0_0_300px] xl:mx-auto">
-              <Image
-                src={`/images/business/${businessData[hoverItem].img}.png`}
-                alt="plus"
-                width={300}
-                height={170}
-              />
-              <p className="p mt-4 mb-6">{businessData[hoverItem].text}</p>
-              <Button className="w-full font-medium">Book a call</Button>
+          <div className="flex justify-between">
+            <motion.div
+              initial={{ top: 0, opacity: 0 }}
+              animate={{
+                top: hoverItem * 128,
+                opacity: 1,
+              }}
+              className="flex-[0_0_300px] top-0 relative xl:mx-auto">
+              <div className="absolute">
+                <Image
+                  src={`/images/business/${businessData[hoverItem].img}.png`}
+                  alt="plus"
+                  width={300}
+                  height={170}
+                />
+                <p className="p mt-4 mb-6">{businessData[hoverItem].text}</p>
+                <Button className="w-full font-medium">Book a call</Button>
+              </div>
             </motion.div>
 
             <div className="flex flex-col flex-[0_1_50%]">
