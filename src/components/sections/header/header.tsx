@@ -7,8 +7,6 @@ import Image from 'next/image';
 import Logo from '../logo';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import LinkExternal from '../link-external';
-import BurgerLinkInternal from './burger-internal-link';
 import LinkInternal from '../link-internal';
 import { Button } from '@/components/ui/button';
 
@@ -21,7 +19,7 @@ const Header = () => {
       <Container className="flex items-center gap-6 justify-between pt-6">
         <Logo />
 
-        <ul className="flex items-center gap-10">
+        <ul className="hidden lg:flex items-center gap-10">
           {headerLinks.map((link, i) => (
             <li key={i}>
               <LinkInternal {...link} />
@@ -29,7 +27,7 @@ const Header = () => {
           ))}
         </ul>
 
-        <Button className="font-medium text-[18px] px-10">Get started</Button>
+        <Button className="hidden lg:block font-medium text-[18px] px-10">Get started</Button>
         <button
           className="size-6 relative lg:hidden"
           onClick={() => setIsBurgerOpened(!isBurgerOpened)}>
