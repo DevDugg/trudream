@@ -4,7 +4,7 @@
 
 @layer utilities {
   .h3 {
-    @apply text-[24px] sm:text-[32px] font-bold text-ACCENT leading-none;
+    @apply text-[24px] sm:text-[32px] lg:text-[48px] font-bold text-ACCENT leading-none;
   }
 
   .h4 {
@@ -12,6 +12,6 @@
   }
 
   .p {
-    @apply leading-[140%] text-[16px] text-BLACK;
+    @apply leading-[140%] text-[16px] lg:text-[18px] text-BLACK;
   }
 }
