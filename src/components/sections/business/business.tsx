@@ -1,13 +1,21 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Container from '@/components/layout/container';
 import Image from 'next/image';
 import { businessData } from '@/data/business.data';
+import clsx from 'clsx';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { colors } from '@/config/colors';
 
 const Business = () => {
+  const [hoverItem, setHoverItem] = useState(0);
+
   return (
     <section>
       <Container>
-        <div className="flex flex-col gap-10">
+        <div className="flex lg:hidden flex-col gap-10">
           <h3 className="h3 sm:text-center">Funding Solutions & Financial Education by TruDream</h3>
 
           <div className="flex flex-col gap-10 sm:gap-8">
@@ -27,6 +35,53 @@ const Business = () => {
           </div>
 
           <Button className="text-[18px] font-medium">Book a call</Button>
+        </div>
+
+        {/* DESKTOP */}
+
+        <div className="hidden lg:block">
+          <h3 className="h3 sm:text-center lg:text-left max-w-[610px] mb-10">
+            Funding Solutions & Financial Education by TruDream
+          </h3>
+
+          <div className="flex items-center justify-between">
+            <motion.div className="flex-[0_0_300px] xl:mx-auto">
+              <Image
+                src={`/images/business/${businessData[hoverItem].img}.png`}
+                alt="plus"
+                width={300}
+                height={170}
+              />
+              <p className="p mt-4 mb-6">{businessData[hoverItem].text}</p>
+              <Button className="w-full font-medium">Book a call</Button>
+            </motion.div>
+
+            <div className="flex flex-col flex-[0_1_50%]">
+              {businessData.map((item, i) => (
+                <motion.div
+                  initial={{
+                    backgroundColor: `${colors.LIGHT_GRAY}00`,
+                    paddingLeft: 0,
+
+                    color: colors.GRAY,
+                  }}
+                  animate={
+                    i === hoverItem
+                      ? {
+                          backgroundColor: colors.LIGHT_GRAY,
+                          paddingLeft: '24px',
+                          color: colors.ACCENT,
+                        }
+                      : {}
+                  }
+                  key={i}
+                  onMouseMove={() => setHoverItem(i)}
+                  className="!py-10 text-[48px] font-bold leading-none !pr-6 rounded-2xl">
+                  {item.title}
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </Container>
     </section>
