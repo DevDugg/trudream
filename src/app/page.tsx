@@ -8,7 +8,7 @@ import Reviews from '@/components/sections/reviews/reviews';
 
 export default function Home() {
   return (
-    <main className="home flex flex-col gap-[100px] py-[60px] sm:py-12 lg:py-20">
+    <main className="home flex flex-col gap-[100px] lg:gap-[150px] py-[60px] sm:py-12 lg:py-20">
       <Hero />
       <AboutUs />
       <Business />
