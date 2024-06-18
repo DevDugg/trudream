@@ -4,14 +4,12 @@ import { Button } from '@/components/ui/button';
 import Container from '@/components/layout/container';
 import Image from 'next/image';
 import { businessData } from '@/data/business.data';
-import clsx from 'clsx';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { colors } from '@/config/colors';
 
 const Business = () => {
   const [hoverItem, setHoverItem] = useState(0);
-  const titleRef = useRef<HTMLDivElement>(null);
 
   return (
     <section>
@@ -68,7 +66,6 @@ const Business = () => {
             <div className="flex flex-col flex-[0_1_50%]">
               {businessData.map((item, i) => (
                 <motion.div
-                  ref={titleRef}
                   initial={{
                     backgroundColor: `${colors.LIGHT_GRAY}00`,
                     paddingLeft: 0,
