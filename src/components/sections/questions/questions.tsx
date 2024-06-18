@@ -1,10 +1,9 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import Container from '@/components/layout/container';
 import Image from 'next/image';
-import clsx from 'clsx';
 import { colors } from '@/config/colors';
 import { questionsData } from '@/data/questions.data';
 import { useState } from 'react';
