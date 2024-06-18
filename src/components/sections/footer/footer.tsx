@@ -49,8 +49,8 @@ export const socialLinks: LinkExternalProps[] = [
 const Footer = () => {
   return (
     <footer className="footer">
-      <Container className="flex flex-col gap-10 pb-10">
-        <div className="flex flex-col sm:flex-row gap-10 sm:max-w-[480px] sm:justify-between">
+      <Container className="flex flex-col lg:flex-row-reverse lg:justify-between gap-10 pb-10">
+        <div className="flex flex-col sm:flex-row gap-10 sm:max-w-[480px] lg:gap-[160px] sm:justify-between">
           <div className="flex flex-col gap-6">
             <h3 className="text-BLACK font-medium text-center sm:text-left">Sitemap</h3>
             <div className="flex flex-wrap sm:grid sm:grid-cols-2 sm:gap-y-2 sm:gap-x-6 gap-6">
@@ -61,9 +61,11 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-6">
             <h3 className="text-BLACK font-medium text-center sm:text-left">Socials</h3>
-            <div className="flex flex-wrap sm:flex-col gap-6 sm:gap-2">
+            <div className="flex flex-wrap sm:flex-col gap-6 sm:gap-2 relative">
               {socialLinks.map((link, i) => (
-                <LinkExternal key={i} {...link} />
+                <div className="sm:absolute last:top-8 left-0">
+                  <LinkExternal key={i} {...link} />
+                </div>
               ))}
             </div>
           </div>
