@@ -7,11 +7,13 @@ const Reviews = () => {
   return (
     <section>
       <Container>
-        <h3 className="h3 -tracking-[1%] mb-10 text-center">What clients say about us</h3>
+        <h3 className="h3 -tracking-[1%] lg:text-[40px] mb-10 lg:mb-12 text-center">
+          What clients say about us
+        </h3>
 
-        <div className="flex flex-col sm:flex-row flex-nowrap sm:flex-wrap items-center justify-center gap-6">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-6">
           {reviewsData.map((item, i) => (
-            <div key={i} className={clsx('p-4 bg-LIGHT_GRAY rounded-[24px] w-full max-w-[410px]')}>
+            <div key={i} className={clsx('p-4 bg-LIGHT_GRAY rounded-[24px] flex-[0_1_410px]')}>
               <div className="flex flex-col gap-1 mb-3">
                 <h5 className="text-[18px] leading-none font-bold text-BLACK -tracking-[1%]">
                   {item.name}
