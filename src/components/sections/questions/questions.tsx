@@ -14,7 +14,9 @@ const Questions = () => {
   return (
     <section>
       <Container>
-        <h3 className="h3 text-center -tracking-[1%] mb-12 sm:mb-10 ">Have any questions?</h3>
+        <h3 className="h3 text-center lg:text-[40px] -tracking-[1%] mb-12 sm:mb-10 lg:mb-12">
+          Have any questions?
+        </h3>
 
         <div className="flex flex-col gap-6">
           {questionsData.map((item, i) => (
@@ -29,7 +31,8 @@ const Questions = () => {
               <div className="flex items-center gap-6 justify-between">
                 <motion.h4
                   initial={{ color: colors.BLACK }}
-                  animate={i === activeFAQ ? { color: colors.ACCENT } : {}}>
+                  animate={i === activeFAQ ? { color: colors.ACCENT } : {}}
+                  className="text-[18px] lg:text-[24px] leading-[120%] font-semibold ">
                   {item.title}
                 </motion.h4>
                 <div className="relative size-6">
@@ -55,7 +58,7 @@ const Questions = () => {
                   i === activeFAQ ? { opacity: 1, height: 'fit-content', marginTop: 16 } : {}
                 }
                 className="overflow-hidden">
-                <p className="text-[16px] leading-[140%] font-normal">{item.text}</p>
+                <p className="p font-normal">{item.text}</p>
               </motion.div>
             </motion.div>
           ))}
