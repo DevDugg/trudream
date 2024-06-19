@@ -1,6 +1,7 @@
 import Container from '@/components/layout/container';
 import { guideData } from '@/data/guide.data';
 import Image from 'next/image';
+import GuideCard from './guide-card';
 
 const Guide = () => {
   return (
@@ -14,19 +15,14 @@ const Guide = () => {
           <Image
             src={'/images/guide/3.png'}
             alt="image"
-            width={1000}
-            height={1000}
-            className="mb-6 sm:mb-8 lg:mb-0 overflow-hidden h-[380px] sm:h-[400px] lg:h-[650px] w-full object-cover object-center"
+            width={610}
+            height={650}
+            className="mb-6 sm:mb-8 lg:mb-0 overflow-hidden h-[380px] sm:h-[400px] lg:h-[650px] object-cover object-center"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-10 flex-[1_0_50%]">
             {guideData.map((item) => (
-              <div key={item.title} className="flex flex-col gap-4">
-                <h4 className="text-ACCENT text-[18px] lg:text-[24px] font-bold leading-none">
-                  {item.title}
-                </h4>
-                <p className="p">{item.text}</p>
-              </div>
+              <GuideCard key={item.title} {...item} />
             ))}
           </div>
         </div>
