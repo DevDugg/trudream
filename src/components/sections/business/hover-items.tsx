@@ -35,7 +35,6 @@ const HoverItems = () => {
                           initial={i === 0 ? { top: "0%" } : { top: "100%" }}
                           animate={i === hoverItem ? { top: "0%", scale: 1 } : {}}
                           exit={{ top: "100%", scale: 0.4 }}
-                          transition={defaultTransition}
                         >
                           <Image src={`/images/business/${item.img}.png`} alt={item.title} width={300} height={300} />
                         </motion.div>
