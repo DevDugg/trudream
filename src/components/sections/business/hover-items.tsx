@@ -1,11 +1,12 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import { colors } from '@/config/colors';
-import { Button } from '@/components/ui/button';
-import { businessData } from '@/data/business.data';
+import { useRef, useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { businessData } from "@/data/business.data";
+import { colors } from "@/config/colors";
+import { motion } from "framer-motion";
 
 const HoverItems = () => {
   const [hoverItem, setHoverItem] = useState(0);
@@ -20,20 +21,20 @@ const HoverItems = () => {
             top: hoverItem * 128,
             opacity: [0, 1],
           }}
-          className="flex-[0_0_300px] top-0 relative xl:mx-auto">
+          className="flex-[0_0_300px] top-0 relative xl:mx-auto"
+        >
           <div className="absolute">
-            <Image
-              src={`/images/business/${businessData[hoverItem].img}.png`}
-              alt="plus"
-              width={300}
-              height={170}
-            />
+            <Image src={`/images/business/${businessData[hoverItem].img}.png`} alt="plus" width={300} height={170} />
             <p className="p mt-4 mb-6">{businessData[hoverItem].text}</p>
             <Button className="w-full font-medium">Book a call</Button>
           </div>
         </motion.div>
 
-        <div className="flex flex-col flex-[0_1_50%]">
+        <motion.div
+          className="flex flex-col flex-[0_1_50%]"
+          initial={{ borderTop: `1px solid ${colors.GRAY}` }}
+          animate={hoverItem === 0 ? { borderTop: `1px solid ${colors.GRAY}00` } : {}}
+        >
           {businessData.map((item, i) => (
             <motion.div
               ref={titleRef}
@@ -42,30 +43,29 @@ const HoverItems = () => {
                 paddingLeft: 0,
                 borderRadius: 0,
                 borderColor: colors.GRAY,
-                borderTop: 1,
-                borderBottom: 1,
                 color: colors.GRAY,
               }}
               animate={
                 i === hoverItem
                   ? {
                       backgroundColor: colors.LIGHT_GRAY,
-                      paddingLeft: '24px',
+                      paddingLeft: "24px",
                       color: colors.ACCENT,
                       borderRadius: 16,
-                      borderTop: 0,
-                      borderBottom: 0,
-                      borderColor: colors.GRAY + '00',
+                      borderColor: `${colors.GRAY}00`,
                     }
+                  : i === hoverItem - 1
+                  ? { borderColor: `${colors.GRAY}00` }
                   : {}
               }
               key={i}
               onMouseMove={() => setHoverItem(i)}
-              className="!py-10 cursor-pointer text-[48px] font-bold leading-none !pr-6">
+              className="py-10 cursor-pointer text-[48px] font-bold leading-none pr-6 border-b"
+            >
               {item.title}
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </>
   );
