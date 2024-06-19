@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Container from '@/components/layout/container';
 import { reviewsData } from '@/data/reviews.data';
 import clsx from 'clsx';
+import ReviewsCard from './reviews-card';
 
 const Reviews = () => {
   return (
@@ -11,30 +12,10 @@ const Reviews = () => {
           What clients say about us
         </h3>
 
-        <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-6">
+        {/* <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-6"> */}
+        <div className="flex flex-col gap-6 items-center md:flex-row md:flex-wrap justify-center">
           {reviewsData.map((item, i) => (
-            <div key={i} className={clsx('p-4 bg-LIGHT_GRAY rounded-[24px] flex-[0_1_410px]')}>
-              <div className="flex flex-col gap-1 mb-3">
-                <h5 className="text-[18px] leading-none font-bold text-BLACK -tracking-[1%]">
-                  {item.name}
-                </h5>
-                <div className="text-[14px] leading-none text-BLACK">{item.email}</div>
-              </div>
-
-              <div className="flex items-center gap-1 mb-6">
-                {item.stars.map((_, i) => (
-                  <Image
-                    key={i}
-                    src={'/images/reviews/star.svg'}
-                    alt="star"
-                    width={16}
-                    height={16}
-                  />
-                ))}
-              </div>
-
-              <p className="p">{item.text}</p>
-            </div>
+            <ReviewsCard key={i} {...item} />
           ))}
         </div>
       </Container>
