@@ -1,21 +1,24 @@
-import Image from 'next/image';
-import Container from '../../layout/container';
-import HeroForm from './hero-form';
-import { general } from '@/config/general';
-import { heroPayData } from '@/data/hero.data';
+import Image from "next/image";
+import Container from "../../layout/container";
+import HeroForm from "./hero-form";
+import { general } from "@/config/general";
+import { heroPayData } from "@/data/hero.data";
 
 const Hero = () => {
   return (
-    <section className="hero bg-HERO_PATTERN">
+    <section
+      id="testimonials"
+      className="hero bg-HERO_PATTERN pt-[60px] sm:pt-12 lg:pt-20"
+    >
       <Container className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-10 sm:gap-8">
         <div className="flex flex-col gap-4 sm:text-center xl:text-left xl:max-w-[690px]">
           <h1 className="text-[32px] sm:text-[40px] lg:text-[80px] font-bold leading-none xl:mb-10">
             {general.appDescription}
           </h1>
           <p className="text-BLACK text-base sm:text-[18px] lg:text-[20px] xl:max-w-[590px] leading-[140%] xl:mb-20">
-            We empowers business owners like you to turn dreams into reality. We provide funding and
-            financial literacy education to help you launch, scale, or invest in your business
-            goals.
+            We empowers business owners like you to turn dreams into reality. We
+            provide funding and financial literacy education to help you launch,
+            scale, or invest in your business goals.
           </p>
 
           <div className="hidden xl:block">

@@ -1,11 +1,11 @@
-import Container from '@/components/layout/container';
-import { guideData } from '@/data/guide.data';
-import Image from 'next/image';
-import GuideCard from './guide-card';
+import Container from "@/components/layout/container";
+import { guideData } from "@/data/guide.data";
+import Image from "next/image";
+import GuideCard from "./guide-card";
 
 const Guide = () => {
   return (
-    <section>
+    <section id="how-it-works">
       <Container>
         <h3 className="h3 mb-10 sm:text-center lg:text-left max-w-[610px]">
           A Step-by-Step Guide to TruDream
@@ -13,7 +13,7 @@ const Guide = () => {
 
         <div className="flex flex-col lg:flex-row lg:items-center flex-[1_0_50%] lg:justify-between gap-20">
           <Image
-            src={'/images/guide/3.png'}
+            src={"/images/guide/3.png"}
             alt="image"
             width={610}
             height={650}

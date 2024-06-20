@@ -1,13 +1,11 @@
-import Container from '@/components/layout/container';
-import { Button } from '@/components/ui/button';
-import { aboutData } from '@/data/about-us.data';
-import Image from 'next/image';
-import AboutCarf from './about-card';
-import AboutCard from './about-card';
+import Container from "@/components/layout/container";
+import { Button } from "@/components/ui/button";
+import { aboutData } from "@/data/about-us.data";
+import AboutCard from "./about-card";
 
 const AboutUs = () => {
   return (
-    <section>
+    <section id="about">
       <Container>
         <div className="flex flex-col lg:flex-row lg:justify-between gap-4 mb-10 lg:mb-12">
           <h3 className="h3 lg:max-w-[600px] lg:flex-[0_1_610px]">
@@ -16,9 +14,10 @@ const AboutUs = () => {
 
           <div className="lg:flex-[0_1_480px]">
             <p className="p lg:mb-8">
-              We understand the frustration of feeling stuck. Traditional loans can be rigid and out
-              of reach, leaving you discouraged. That's why we offer a unique approach that tackles
-              your financial challenges from two angles:
+              We understand the frustration of feeling stuck. Traditional loans
+              can be rigid and out of reach, leaving you discouraged. That's why
+              we offer a unique approach that tackles your financial challenges
+              from two angles:
             </p>
             <Button className="hidden lg:block px-10 text-[18px] font-medium mb-10">
               Browse our services

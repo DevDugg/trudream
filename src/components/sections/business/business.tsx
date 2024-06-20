@@ -1,20 +1,24 @@
-import { Button } from '@/components/ui/button';
-import Container from '@/components/layout/container';
-import Image from 'next/image';
-import { businessData } from '@/data/business.data';
-import HoverItems from './hover-items';
+import { Button } from "@/components/ui/button";
+import Container from "@/components/layout/container";
+import Image from "next/image";
+import { businessData } from "@/data/business.data";
+import HoverItems from "./hover-items";
 
 const Business = () => {
   return (
-    <section>
+    <section id="services">
       <Container className="pb-[330px]">
         <div className="flex lg:hidden flex-col gap-10">
-          <h3 className="h3 sm:text-center">Funding Solutions & Financial Education by TruDream</h3>
+          <h3 className="h3 sm:text-center">
+            Funding Solutions & Financial Education by TruDream
+          </h3>
 
           <div className="flex flex-col gap-10 sm:gap-8">
             {businessData.map((item, i) => (
               <div key={i}>
-                <h2 className="text-[32px] font-bold leading-none text-BLACK mb-6">{item.title}</h2>
+                <h2 className="text-[32px] font-bold leading-none text-BLACK mb-6">
+                  {item.title}
+                </h2>
                 <Image
                   src={`/images/business/${item.img}.png`}
                   alt="image"
