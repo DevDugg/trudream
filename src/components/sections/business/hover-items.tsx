@@ -6,9 +6,7 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { businessData } from "@/data/business.data";
-import clsx from "clsx";
 import { colors } from "@/config/colors";
-import { defaultTransition } from "@/config/transitions";
 
 const HoverItems = () => {
   const [hoverItem, setHoverItem] = useState(0);
@@ -33,12 +31,19 @@ const HoverItems = () => {
                           className={"absolute"}
                           key={i}
                           initial={i === 0 ? { top: "0%" } : { top: "100%" }}
-                          animate={i === hoverItem ? { top: "0%", scale: 1 } : {}}
+                          animate={
+                            i === hoverItem ? { top: "0%", scale: 1 } : {}
+                          }
                           exit={{ top: "100%", scale: 0.4 }}
                         >
-                          <Image src={`/images/business/${item.img}.png`} alt={item.title} width={300} height={300} />
+                          <Image
+                            src={`/images/business/${item.img}.png`}
+                            alt={item.title}
+                            width={300}
+                            height={300}
+                          />
                         </motion.div>
-                      ),
+                      )
                   )}
                 </AnimatePresence>
               </div>
@@ -53,10 +58,14 @@ const HoverItems = () => {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <p className="p mt-4 mb-6">{businessData[hoverItem].text}</p>
-                        <Button className="w-full font-medium">Book a call</Button>
+                        <p className="p mt-4 mb-6">
+                          {businessData[hoverItem].text}
+                        </p>
+                        <Button className="w-full font-medium">
+                          Book a call
+                        </Button>
                       </motion.div>
-                    ),
+                    )
                 )}
               </AnimatePresence>
             </div>
@@ -66,7 +75,9 @@ const HoverItems = () => {
         <motion.div
           className="flex flex-col flex-[0_1_50%]"
           initial={{ borderTop: `1px solid ${colors.GRAY}` }}
-          animate={hoverItem === 0 ? { borderTop: `1px solid ${colors.GRAY}00` } : {}}
+          animate={
+            hoverItem === 0 ? { borderTop: `1px solid ${colors.GRAY}00` } : {}
+          }
         >
           {businessData.map((item, i) => (
             <motion.div
