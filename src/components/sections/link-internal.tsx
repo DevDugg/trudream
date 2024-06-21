@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const LinkInternal = ({ href, name }: LinkExternalProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const { handleOnClick } = useScrollToTarget(href);
+  const { handleOnClick } = useScrollToTarget(href === "#" ? "#hero" : href);
   return (
     <div onMouseOver={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <motion.a
