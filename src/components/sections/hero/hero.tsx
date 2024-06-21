@@ -6,7 +6,7 @@ import { heroPayData } from "@/data/hero.data";
 
 const Hero = () => {
   return (
-    <section id="testimonials" className="hero bg-HERO_PATTERN pt-[133px] sm:pt-[121px] lg:pt-[153px]">
+    <section id="hero" className="hero bg-HERO_PATTERN pt-[133px] sm:pt-[121px] lg:pt-[153px]">
       <Container className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-10 sm:gap-8">
         <div className="flex flex-col gap-4 sm:text-center xl:text-left xl:max-w-[690px]">
           <h1 className="text-[32px] sm:text-[40px] lg:text-[80px] font-bold leading-none xl:mb-10">
