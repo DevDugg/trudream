@@ -27,7 +27,6 @@ const ScrollProgress = ({ children }: IProps) => {
           transformOrigin: "0%",
           zIndex: 100,
           height: 3,
-          mixBlendMode: "exclusion",
         }}
       ></motion.div>
       {children}
