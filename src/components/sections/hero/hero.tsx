@@ -20,8 +20,8 @@ const Hero = () => {
           <div className="hidden xl:block">
             <h4 className="h4 mb-4">Invested in</h4>
             <div className="flex gap-5">
-              {heroPayData.map((item) => (
-                <Image key={item.path} src={`/images/hero/${item.path}.svg`} alt="icon" width={40} height={40} />
+              {heroPayData.map((item, i) => (
+                <Image key={i} src={`/images/hero/${item.path}.svg`} alt="icon" width={40} height={40} />
               ))}
             </div>
           </div>
@@ -33,8 +33,8 @@ const Hero = () => {
           <div className="flex flex-col xl:hidden sm:items-center gap-4 sm:gap-6">
             <h4 className="h4">Invested in</h4>
             <div className="flex gap-5">
-              {heroPayData.map((item) => (
-                <Image key={item.path} src={`/images/hero/${item.path}.svg`} alt="icon" width={40} height={40} />
+              {heroPayData.map((item, i) => (
+                <Image key={i} src={`/images/hero/${item.path}.svg`} alt="icon" width={40} height={40} />
               ))}
             </div>
           </div>

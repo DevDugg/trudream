@@ -1,15 +1,13 @@
 import Container from "@/components/layout/container";
-import { guideData } from "@/data/guide.data";
-import Image from "next/image";
 import GuideCard from "./guide-card";
+import Image from "next/image";
+import { guideData } from "@/data/guide.data";
 
 const Guide = () => {
   return (
     <section id="how-it-works">
       <Container>
-        <h3 className="h3 mb-10 sm:text-center lg:text-left max-w-[610px]">
-          A Step-by-Step Guide to TruDream
-        </h3>
+        <h3 className="h3 mb-10 sm:text-center lg:text-left max-w-[610px]">A Step-by-Step Guide to TruDream</h3>
 
         <div className="flex flex-col lg:flex-row lg:items-center flex-[1_0_50%] lg:justify-between gap-20">
           <Image
@@ -21,8 +19,8 @@ const Guide = () => {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-10 flex-[1_0_50%]">
-            {guideData.map((item) => (
-              <GuideCard key={item.title} {...item} />
+            {guideData.map((item, i) => (
+              <GuideCard key={i} {...item} />
             ))}
           </div>
         </div>
