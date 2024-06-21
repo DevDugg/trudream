@@ -1,10 +1,5 @@
 import "./globals.css";
 
-import Footer from "@/components/sections/footer/footer";
-import Header from "@/components/sections/header/header";
-import Loader from "@/components/sections/loader";
-import Provider from "@/config/provider";
-import { Toaster } from "@/components/ui/toaster";
 import { Viewport } from "next";
 import { colors } from "@/config/colors";
 import { getSEOTags } from "@/lib/seo";
@@ -36,15 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className} bg-BACKGROUND text-ACCENT`}>
-        <Provider>
-          <Loader />
-          <Header />
-          {children}
-          <Toaster />
-          <Footer />
-        </Provider>
-      </body>
+      <body className={`${font.className} bg-BACKGROUND text-ACCENT`}>{children}</body>
     </html>
   );
 }
