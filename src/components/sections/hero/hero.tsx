@@ -2,9 +2,7 @@ import Container from "../../layout/container";
 import HeroForm from "./hero-form";
 import Image from "next/image";
 import RichText from "../../../../sanity/lib/rich-text";
-import { general } from "@/config/general";
 import { getHeroSectionData } from "../../../../sanity/schemas/hero";
-import { heroPayData } from "@/data/hero.data";
 import { urlForImage } from "../../../../sanity/lib/image";
 
 // IMPORTANT: This must be a server component
@@ -53,4 +51,5 @@ const Hero = async () => {
     </section>
   );
 };
+
 export default Hero;
