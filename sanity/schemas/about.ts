@@ -14,7 +14,7 @@ export interface IAboutSection {
 // Function to get hero section data
 export const getAboutSectionData = async (): Promise<IAboutSection[]> => {
   const query = `*[_type == 'about_section']`; // *[_type == 'about_section'] gets all documents of type about_section
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { cache: "no-store" });
   return data;
 };
 

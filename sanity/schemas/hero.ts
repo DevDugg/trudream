@@ -13,7 +13,7 @@ export interface IHeroSection {
 // Function to get hero section data
 export const getHeroSectionData = async (): Promise<IHeroSection[]> => {
   const query = `*[_type == 'hero_section']`; // *[_type == 'hero_section'] gets all documents of type hero_section
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { cache: "no-store" });
   return data;
 };
 
