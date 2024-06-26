@@ -1,7 +1,7 @@
 import { client } from "../lib/client";
 
 // Interface for correct hero section types
-export interface IAboutSection {
+export interface IBusinessSection {
   title: string;
   subtitle: any; // not a string, but an array of blocks
   cards: {
@@ -12,21 +12,33 @@ export interface IAboutSection {
 }
 
 // Function to get hero section data
-export const getAboutSectionData = async (): Promise<IAboutSection[]> => {
+export const getBusinessSectionData = async (): Promise<IBusinessSection[]> => {
   const query = `*[_type == 'about_section']`; // *[_type == 'about_section'] gets all documents of type about_section
   const data = await client.fetch(query);
   return data;
 };
 
-const about_section = {
-  name: "about_section", // IMPORTANT, this is query name
+const business_section = {
+  name: "business_section", // IMPORTANT, this is query name
   type: "document",
-  title: "About Section",
+  title: "Business Section",
   fields: [
     {
       name: "title",
-      type: "string",
+      type: "array",
       title: "Title",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              type: "string",
+              title: "Title",
+            },
+          ],
+        },
+      ],
     },
 
     // use array of blocks for rich text
@@ -61,7 +73,7 @@ const about_section = {
               title: "Image",
             },
             {
-              name: "description",
+              name: "Description",
               type: "string",
               title: "Description",
             },
@@ -72,4 +84,4 @@ const about_section = {
   ],
 };
 
-export default about_section;
+export default business_section;
