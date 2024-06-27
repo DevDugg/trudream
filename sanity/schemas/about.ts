@@ -41,7 +41,6 @@ const about_section = {
       ],
     },
 
-    // use array of objects for icons
     {
       name: "cards",
       type: "array",

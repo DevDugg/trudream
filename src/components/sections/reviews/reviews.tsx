@@ -1,18 +1,20 @@
 import Container from "@/components/layout/container";
 import ReviewsCard from "./reviews-card";
-import { reviewsData } from "@/data/reviews.data";
+import { getReviewsSectionData } from "../../../../sanity/schemas/reviews";
 
-const Reviews = () => {
+const Reviews = async () => {
+  const reviewsSectionData = await getReviewsSectionData();
+
   return (
     <section id="testimonials">
       <Container>
         <h3 className="h3 -tracking-[1%] lg:text-[40px] mb-10 lg:mb-12 text-center">
-          What clients say about us
+          {reviewsSectionData[0].title}
         </h3>
 
         <div className="flex flex-col gap-6 items-center md:flex-row md:flex-wrap justify-center">
-          {reviewsData.map((item, i) => (
-            <ReviewsCard key={i} {...item} />
+          {reviewsSectionData[0].cards.map((item, i) => (
+            <ReviewsCard {...item} key={i} />
           ))}
         </div>
       </Container>

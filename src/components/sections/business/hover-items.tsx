@@ -7,8 +7,14 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { businessData } from "@/data/business.data";
 import { colors } from "@/config/colors";
+import { IBusinessSection } from "../../../../sanity/schemas/business";
+import { urlForImage } from "../../../../sanity/lib/image";
 
-const HoverItems = () => {
+const HoverItems = ({
+  businessSectionData,
+}: {
+  businessSectionData: IBusinessSection[];
+}) => {
   const [hoverItem, setHoverItem] = useState(0);
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -24,7 +30,7 @@ const HoverItems = () => {
             <div>
               <div className="overflow-hidden h-[170px] relative">
                 <AnimatePresence mode="popLayout">
-                  {businessData.map(
+                  {businessSectionData[0].cards.map(
                     (item, i) =>
                       i === hoverItem && (
                         <motion.div
@@ -37,7 +43,7 @@ const HoverItems = () => {
                           exit={{ top: "100%", scale: 0.4 }}
                         >
                           <Image
-                            src={`/images/business/${item.img}.png`}
+                            src={urlForImage(item.image)}
                             alt={item.title}
                             width={300}
                             height={300}
@@ -48,7 +54,7 @@ const HoverItems = () => {
                 </AnimatePresence>
               </div>
               <AnimatePresence mode="wait">
-                {businessData.map(
+                {businessSectionData[0].cards.map(
                   (item, i) =>
                     i === hoverItem && (
                       <motion.div
@@ -79,7 +85,7 @@ const HoverItems = () => {
             hoverItem === 0 ? { borderTop: `1px solid ${colors.GRAY}00` } : {}
           }
         >
-          {businessData.map((item, i) => (
+          {businessSectionData[0].cards.map((item, i) => (
             <motion.div
               ref={titleRef}
               initial={{
@@ -99,8 +105,8 @@ const HoverItems = () => {
                       borderColor: `${colors.GRAY}00`,
                     }
                   : i === hoverItem - 1
-                  ? { borderColor: `${colors.GRAY}00` }
-                  : {}
+                    ? { borderColor: `${colors.GRAY}00` }
+                    : {}
               }
               key={i}
               onMouseMove={() => setHoverItem(i)}

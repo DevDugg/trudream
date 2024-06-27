@@ -1,12 +1,13 @@
 import AboutCard from "./about-card";
 import { Button } from "@/components/ui/button";
 import Container from "@/components/layout/container";
-import { aboutData } from "@/data/about-us.data";
 import RichText from "../../../../sanity/lib/rich-text";
 import { getAboutSectionData } from "../../../../sanity/schemas/about";
 
 const AboutUs = async () => {
   const aboutSectionData = await getAboutSectionData();
+
+  console.log("first");
 
   return (
     <section id="about">

@@ -1,25 +1,26 @@
 import { client } from "../lib/client";
 
-// Interface for correct hero section types
-export interface IBusinessSection {
+export interface IQuestionsSection {
   title: string;
   cards: {
     title: string;
     subtitle: string;
-    image: any; // not a string, but an image
   }[];
 }
 
-export const getBusinessSectionData = async (): Promise<IBusinessSection[]> => {
-  const query = `*[_type == 'business_section']`; // *[_type == 'about_section'] gets all documents of type about_section
+// Function to get hero section data
+export const getQuestionsSectionData = async (): Promise<
+  IQuestionsSection[]
+> => {
+  const query = `*[_type == 'questions_section']`; // *[_type == 'questions_section'] gets all documents of type questions_section
   const data = await client.fetch(query, {}, { cache: "no-store" });
   return data;
 };
 
-const business_section = {
-  name: "business_section", // IMPORTANT, this is query name
+const questions_section = {
+  name: "questions_section", // IMPORTANT, this is query name
   type: "document",
-  title: "Business Section",
+  title: "Questions Section",
   fields: [
     {
       name: "title",
@@ -40,11 +41,6 @@ const business_section = {
               title: "Title",
             },
             {
-              name: "image",
-              type: "image",
-              title: "Image",
-            },
-            {
               name: "subtitle",
               type: "string",
               title: "Subtitle",
@@ -56,4 +52,4 @@ const business_section = {
   ],
 };
 
-export default business_section;
+export default questions_section;

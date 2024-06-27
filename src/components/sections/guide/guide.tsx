@@ -2,16 +2,22 @@ import Container from "@/components/layout/container";
 import GuideCard from "./guide-card";
 import Image from "next/image";
 import { guideData } from "@/data/guide.data";
+import { getGuideSectionData } from "../../../../sanity/schemas/guide";
+import { urlForImage } from "../../../../sanity/lib/image";
 
-const Guide = () => {
+const Guide = async () => {
+  const guideSectionData = await getGuideSectionData();
+
   return (
     <section id="how-it-works">
       <Container>
-        <h3 className="h3 mb-10 sm:text-center lg:text-left max-w-[610px]">A Step-by-Step Guide to TruDream</h3>
+        <h3 className="h3 mb-10 sm:text-center lg:text-left max-w-[610px]">
+          {guideSectionData[0].title}
+        </h3>
 
         <div className="flex flex-col lg:flex-row lg:items-center flex-[1_0_50%] lg:justify-between gap-20">
           <Image
-            src={"/images/guide/3.png"}
+            src={urlForImage(guideSectionData[0].image)}
             alt="image"
             width={610}
             height={650}
@@ -19,7 +25,7 @@ const Guide = () => {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 lg:gap-10 flex-[1_0_50%]">
-            {guideData.map((item, i) => (
+            {guideSectionData[0].cards.map((item, i) => (
               <GuideCard key={i} {...item} />
             ))}
           </div>

@@ -11,7 +11,6 @@ interface IProps {
 }
 
 const AboutCard = (props: IProps) => {
-  console.log(props.description);
   return (
     <div
       key={props.title}
@@ -23,6 +22,7 @@ const AboutCard = (props: IProps) => {
           alt={"icon"}
           width={32}
           height={32}
+          className="size-8"
         />
         <h4 className="text-ACCENT leading-none text-[20px] font-semibold">
           {props.title}
